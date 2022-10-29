@@ -9,17 +9,17 @@ CREATE TABLE department(
     name VARCHAR(100)
 );
 
-CREATE TABLE roles(
+CREATE TABLE role(
     id INT, 
     title VARCHAR(30),
     salary DECIMAL,
-    department_id INT
+     FOREIGN KEY (department_id) REFERENCES (id)
 );
 
 CREATE TABLE employee(
     id INT,
     first_name VARCHAR(30),
     Last_name VARCHAR(30),
-    roles_id INT,
-    manager_id INT
+    FOREIGN KEY (role_id) REFERENCES role(id),
+    FOREIGN KEY (manager_id) REFERENCES employee(id)
 );
