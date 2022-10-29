@@ -5,19 +5,19 @@ CREATE DATABASE employee_db;
 USE employee_db;
 
 CREATE TABLE department(
-    id INT,
+    id INT AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(100)
 );
 
 CREATE TABLE role(
-    id INT, 
+    id INT INT AUTO_INCREMENT PRIMARY KEY, 
     title VARCHAR(30),
     salary DECIMAL,
      FOREIGN KEY (department_id) REFERENCES (id)
 );
 
 CREATE TABLE employee(
-    id INT,
+    id INT INT AUTO_INCREMENT PRIMARY KEY,
     first_name VARCHAR(30),
     Last_name VARCHAR(30),
     FOREIGN KEY (role_id) REFERENCES role(id),
