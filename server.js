@@ -52,14 +52,23 @@ const employeeUpdate = () =>{
 const seeDepartment = () => {
     const query = `SELECT name FROM department`
     connection.query(query, (err, res) =>{
-        if (err) throw err
+        if (err) throw err;
         console.table(res)
         employeeUpdate()
     });
 };
 
 const seeRole = () => {
-
+    roles = [];
+    const query = `SELECT title FROM role`
+    connection.query(query,  (err, res) =>{
+        if (err) throw err;
+        res.forEach(({title}) =>{
+            roles.push(title);
+            console.table(res)
+            employeeUpdate()
+        })
+    })
 };
 
 const addEmployee = () => {
