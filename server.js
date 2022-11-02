@@ -16,7 +16,37 @@ const connection = mysql.createConnection({
 });
 
 const employeeUpdate = () =>{
+    inquirer.prompt([
+        {
+            type:'list',
+            name:'chooseEmployee',
+            Messsage:'Choose one.',
+            Choices:[
+                        'View Employees',
+                        'View Role',
+                        'Add Employee',
+                        'Update Currnet Employee'
+                    ]
+        }
+    ]).then ((option) => {
+        switch(option.chooseEmployee){
+            case 'View Employees': seeAllEmployees();
+            break;
+            
+            case 'View department': seeDepartment();
+            break;
+        
+            case 'View Role': seeRole();
+            break;
 
+            case 'Add Emplyee': addEmployee();
+            break;
+
+            case 'Update Currnet Employee': employeeUpdate();
+            break;
+        }
+            
+    })
 }
 
 const seeDepartment = () => {
@@ -28,6 +58,10 @@ const seeRole = () => {
 }
 
 const addEmployee = () => {
+
+}
+
+const seeAllEmployees = () => {
 
 }
 
