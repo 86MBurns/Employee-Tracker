@@ -47,22 +47,27 @@ const employeeUpdate = () =>{
         }
             
     })
-}
+};
 
 const seeDepartment = () => {
-
-}
+    const query = `SELECT name FROM department`
+    connection.query(query, (err, res) =>{
+        if (err) throw err
+        console.table(res)
+        employeeUpdate()
+    });
+};
 
 const seeRole = () => {
 
-}
+};
 
 const addEmployee = () => {
 
-}
+};
 
 const seeAllEmployees = () => {
 
-}
+};
 
 employeeUpdate()
