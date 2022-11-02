@@ -15,3 +15,20 @@ const connection = mysql.createConnection({
     database: 'schema_db'
 });
 
+const employeeUpdate = () =>{
+
+}
+
+const seeDepartment = () => {
+
+}
+
+const seeRole = () => {
+
+}
+
+const addEmployee = () => {
+
+}
+
+employeeUpdate()
